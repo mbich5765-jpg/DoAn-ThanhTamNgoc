@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - Thanh Tâm Ngọc</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 40px; }
+        .product-image { flex: 1; border-radius: 12px; overflow: hidden; }
+        .product-image img { width: 100%; height: auto; object-fit: cover; }
+        .product-info { flex: 1; display: flex; flex-direction: column; }
+        h1 { color: #1c7c54; margin-top: 0; }
+        .price { color: #d32f2f; font-size: 2em; font-weight: bold; margin: 15px 0; }
+        .stock { color: #666; font-size: 1.1em; margin-bottom: 20px; }
+        .desc { line-height: 1.6; color: #444; font-size: 1.1em; background: #f1f8f5; padding: 15px; border-radius: 8px; margin-bottom: 30px; }
+        .btn-add { background: #f0a500; color: white; border: none; padding: 15px; border-radius: 8px; font-size: 1.2em; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-add:hover { background: #d69300; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #1c7c54; text-decoration: none; font-weight: bold; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div style="max-width: 1000px; margin: 0 auto;">
+        <a href="index.html" class="back-link">← Quay lại cửa hàng</a>
+    </div>
+
+    <div class="container" id="detail-container">
+        <h3 style="text-align: center; width: 100%;">Đang tải thông tin sản phẩm...</h3>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (!productId) {
+                document.getElementById('detail-container').innerHTML = '<h3>Không tìm thấy mã sản phẩm!</h3>';
+                return;
+            }
+
+            fetch(`/api/products/${productId}`)
+            .then(response => response.json())
+            .then(p => {
+                const priceFormatted = new Intl.NumberFormat('vi-VN').format(p.price) + " VNĐ";
+                const stockStatus = p.stockQuantity > 0 ? `Còn hàng (${p.stockQuantity} sản phẩm)` : `<span style="color:red;">Hết hàng</span>`;
+
+                const html = `
+                    <div class="product-image">
+                        <img src="/images/${p.imageUrl}" alt="${p.name}">
+                    </div>
+                    <div class="product-info">
+                        <h1>${p.name}</h1>
+                        <div class="price">${priceFormatted}</div>
+                        <div class="stock"><strong>Tình trạng:</strong> ${stockStatus}</div>
+                        <div class="stock"><strong>Chất liệu:</strong> ${p.gemType}</div>
+                        
+                        <div class="desc">
+                            <strong>Mô tả sản phẩm:</strong><br><br>
+                            ${p.description}
+                        </div>
+
+                        <button class="btn-add" onclick="alert('Đã thêm ${p.name} vào giỏ hàng!')">Thêm vào giỏ hàng</button>
+                    </div>
+                `;
+                document.getElementById('detail-container').innerHTML = html;
+            })
+            .catch(err => {
+                document.getElementById('detail-container').innerHTML = '<h3>Lỗi kết nối đến cơ sở dữ liệu!</h3>';
+            });
+        };
+    </script>
+</body>
+</html>

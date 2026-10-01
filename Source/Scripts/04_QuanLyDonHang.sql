@@ -1,0 +1,20 @@
+﻿-- 1. TẠO BẢNG HÓA ĐƠN TỔNG (ORDERS)
+CREATE TABLE Orders (
+    OrderId INT IDENTITY(1,1) PRIMARY KEY,
+    UserEmail VARCHAR(100) NOT NULL,
+    OrderDate DATETIME DEFAULT GETDATE(),
+    ShippingAddress NVARCHAR(255) NOT NULL,
+    TotalAmount DECIMAL(18, 2) NOT NULL,
+    OrderStatus NVARCHAR(50) DEFAULT N'Thành công'
+);
+GO
+-- 2. TẠO BẢNG CHI TIẾT MÓN HÀNG TRONG HÓA ĐƠN (ORDER DETAILS)  
+CREATE TABLE OrderDetails (
+    OrderDetailId INT IDENTITY(1,1) PRIMARY KEY,
+    OrderId INT NOT NULL,
+    ProductName NVARCHAR(200) NOT NULL,
+    Quantity INT NOT NULL,
+    UnitPrice DECIMAL(18, 2) NOT NULL,
+    FOREIGN KEY (OrderId) REFERENCES Orders(OrderId) ON DELETE CASCADE
+);
+GO

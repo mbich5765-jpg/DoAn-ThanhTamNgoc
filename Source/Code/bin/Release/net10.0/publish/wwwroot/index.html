@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Tâm Ngọc - Hệ thống Quản lý và Phân phối Trang Sức</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4fcf7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #1c7c54;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            margin: 0;
+        }
+
+        .actions-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .auth-box, .cart-box {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px solid #1c7c54;
+            font-weight: bold;
+            color: #1c7c54;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+            .auth-box:hover, .cart-box:hover {
+                transform: scale(1.05);
+            }
+
+        .cart-badge {
+            background: #e63946;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.9em;
+        }
+
+        .filter-bar-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+
+        .search-container {
+            position: relative;
+            flex: 2;
+        }
+
+            .search-container input {
+                width: 100%;
+                padding: 12px 40px 12px 20px;
+                border-radius: 25px;
+                border: 1px solid #ccc;
+                font-size: 1.1em;
+                outline: none;
+                box-sizing: border-box;
+                background-color: #f9f9f9;
+                transition: all 0.3s;
+            }
+
+                .search-container input:focus {
+                    border-color: #1c7c54;
+                    background-color: white;
+                    box-shadow: 0 0 8px rgba(28, 124, 84, 0.2);
+                }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            fill: #000;
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+        }
+
+        .price-filter-select {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 2px solid #1c7c54;
+            font-size: 1.05em;
+            font-weight: bold;
+            color: #1c7c54;
+            outline: none;
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+            .price-filter-select:hover {
+                box-shadow: 0 0 8px rgba(28, 124, 84, 0.2);
+            }
+
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+
+        .menu-btn {
+            background-color: white;
+            color: #1c7c54;
+            border: 2px solid #1c7c54;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+            .menu-btn:hover, .menu-btn.active {
+                background-color: #1c7c54;
+                color: white;
+            }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+            .product-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            }
+
+            .product-card img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+        .product-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin: 15px 0 5px;
+            color: #2d6a4f;
+        }
+
+        .product-price {
+            color: #e63946;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .add-cart-btn {
+            background-color: #ff9f1c;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            font-size: 1em;
+        }
+
+            .add-cart-btn:hover {
+                background-color: #f48c06;
+            }
+
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #1c7c54;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 15px;
+            position: fixed;
+            z-index: 1001;
+            bottom: 30px;
+            right: 30px;
+            font-size: 17px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.5s, bottom 0.5s;
+        }
+
+            #toast.show {
+                visibility: visible;
+                opacity: 1;
+                bottom: 50px;
+            }
+
+        .pagination-btn {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background: white;
+            color: #1c7c54;
+            border: 2px solid #1c7c54;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+            .pagination-btn:hover {
+                background: #1c7c54;
+                color: white;
+            }
+
+            .pagination-btn:disabled {
+                background: #ccc;
+                border-color: #ccc;
+                color: #666;
+                cursor: not-allowed;
+            }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>Trang Sức Thanh Tâm Ngọc</h1>
+        <div class="actions-container">
+            <div class="auth-box" onclick="document.getElementById('auth-modal').style.display='flex'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+                Đăng nhập / Đăng ký
+            </div>
+            <div class="cart-box" onclick="openCartModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.21 9l-4.38-6.56a.993.993 0 0 0-1.66 0L6.79 9H2v2h2l1.95 7.82a2 2 0 0 0 1.94 1.51h8.22a2 2 0 0 0 1.94-1.51L20 11h2V9h-4.79zM9 9l3-4.5L15 9H9zm5.95 9H9.05l-1.5-6h8.9l-1.5 6z" />
+                </svg>
+                Giỏ hàng <span class="cart-badge" id="cart-count">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="filter-bar-container">
+        <div class="search-container">
+            <input type="email" style="position: absolute; width: 1px; height: 1px; opacity: 0; top: -999px;" tabindex="-1" autocomplete="email">
+            <input type="search" id="search-input" placeholder="Tìm kiếm trang sức..." onkeyup="applyFilters()" autocomplete="nope" role="presentation" spellcheck="false" readonly onfocus="this.removeAttribute('readonly');">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z" /><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.86-3.14-7-7-7s-7 3.14-7 7 3.14 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z" /></svg>
+        </div>
+        <select id="price-filter" class="price-filter-select" onchange="applyFilters()">
+            <option value="all">Mọi mức giá</option>
+            <option value="under5">Dưới 5 triệu</option>
+            <option value="5to10">Từ 5 - 10 triệu</option>
+            <option value="over10">Trên 10 triệu</option>
+        </select>
+    </div>
+
+    <div class="menu-container">
+        <button class="menu-btn active" onclick="filterCategory('all', this)">Tất cả Sản phẩm</button>
+        <button class="menu-btn" onclick="filterCategory('nhẫn', this)">Nhẫn</button>
+        <button class="menu-btn" onclick="filterCategory('vòng', this)">Vòng tay</button>
+        <button class="menu-btn" onclick="filterCategory('mặt', this)">Mặt dây chuyền</button>
+        <button class="menu-btn" onclick="filterCategory('bông', this)">Bông tai</button>
+        <button class="menu-btn" onclick="filterCategory('chuỗi', this)">Chuỗi</button>
+        <button class="menu-btn" onclick="filterCategory('ngọc bội', this)">Ngọc bội</button>
+    </div>
+
+    <div class="grid-container" id="product-list"></div>
+    <div id="pagination-container" style="text-align: center; margin: 30px 0;"></div>
+    <div id="toast">Đã thêm vào giỏ hàng!</div>
+
+    <div id="product-detail-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2500; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
+        <div style="background: white; padding: 30px; border-radius: 16px; width: 850px; max-width: 90%; display: flex; gap: 30px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <span onclick="closeProductDetailModal()" style="position: absolute; right: 20px; top: 15px; font-size: 28px; cursor: pointer; color: #666; transition: 0.3s;" onmouseover="this.style.color='#d32f2f'" onmouseout="this.style.color='#666'">&times;</span>
+            <div style="flex: 1;">
+                <img id="detail-image" src="" alt="Product" style="width: 100%; height: 400px; border-radius: 12px; object-fit: cover; border: 1px solid #eee;">
+            </div>
+            <div style="flex: 1.2; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 10px;">
+                <h2 id="detail-name" style="color: #1c7c54; margin-top: 0; margin-bottom: 10px; font-size: 1.8em;"></h2>
+                <p id="detail-price" style="color: #d32f2f; font-weight: bold; font-size: 1.6em; margin: 10px 0;"></p>
+                <div style="background: #f4fcf7; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #e8f5e9;">
+                    <p style="margin: 0 0 8px 0; font-size: 1.05em;"><strong>Tình trạng:</strong> <span id="detail-stock" style="color: #2e7d32; font-weight: bold;"></span></p>
+                    <p style="margin: 0; font-size: 1.05em;"><strong>Chất liệu:</strong> <span id="detail-gemtype" style="color: #555;"></span></p>
+                </div>
+                <div style="margin-bottom: 20px; color: #555; line-height: 1.6; max-height: 120px; overflow-y: auto; padding-right: 10px;" id="detail-description"></div>
+                <button id="detail-add-cart-btn" style="width: 100%; padding: 15px; background: #f0a500; color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 8px; font-size: 1.1em; transition: 0.3s; margin-top: auto;">THÊM VÀO GIỎ HÀNG</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="auth-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
+        <div style="background: white; padding: 40px; border-radius: 16px; width: 450px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <span onclick="closeModal()" style="position: absolute; right: 20px; top: 15px; font-size: 28px; cursor: pointer; color: #666;">&times;</span>
+            <div id="modal-tabs" style="display: flex; justify-content: space-around; margin-bottom: 30px; border-bottom: 2px solid #eee;">
+                <h3 id="tab-signin" style="cursor: pointer; padding-bottom: 10px; border-bottom: 3px solid #1c7c54; color: #1c7c54; width: 50%; text-align: center; margin: 0;" onclick="switchTab('signin')">Đăng Nhập</h3>
+                <h3 id="tab-signup" style="cursor: pointer; padding-bottom: 10px; color: #999; width: 50%; text-align: center; margin: 0;" onclick="switchTab('signup')">Đăng Ký</h3>
+            </div>
+            <div id="form-signin">
+                <input type="email" id="login-email" placeholder="Email của bạn *" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em;">
+                <input type="password" id="login-pass" placeholder="Mật khẩu *" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em;">
+                <div style="text-align: right; margin-bottom: 20px;">
+                    <a href="#" onclick="showForgotView()" style="color: #444; font-size: 0.9em; text-decoration: underline;">Quên mật khẩu?</a>
+                </div>
+                <button type="button" onclick="submitLogin()" style="width: 100%; padding: 14px; background: #1c7c54; color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 8px; font-size: 1.1em; transition: background 0.3s;">ĐĂNG NHẬP</button>
+            </div>
+            <div id="form-signup" style="display: none;">
+                <input type="text" id="reg-name" placeholder="Họ và Tên *" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em;">
+                <input type="email" id="reg-email" placeholder="Email của bạn *" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em;">
+                <input type="password" id="reg-pass" placeholder="Mật khẩu *" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em;">
+                <div style="display: flex; gap: 15px; margin-bottom: 25px;">
+                    <div style="flex: 1;">
+                        <label style="font-size: 13px; color: #666; font-weight: bold; display: block; margin-bottom: 5px;">Ngày sinh</label>
+                        <input type="date" id="reg-dob" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="font-size: 13px; color: #666; font-weight: bold; display: block; margin-bottom: 5px;">Ngày kỷ niệm</label>
+                        <input type="date" id="reg-anni" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+                    </div>
+                </div>
+                <button type="button" onclick="submitRegister()" style="width: 100%; padding: 14px; background: #000; color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 8px; font-size: 1.1em;">TẠO TÀI KHOẢN</button>
+            </div>
+            <div id="form-forgot" style="display: none;">
+                <h3 style="margin-top: 0; margin-bottom: 10px; font-size: 1.4em; color: #333;">Quên mật khẩu</h3>
+                <p style="color: #666; font-size: 0.9em; margin-bottom: 20px; line-height: 1.5;">Để nhận liên kết đặt lại mật khẩu, vui lòng nhập địa chỉ email bạn dùng để đăng ký.</p>
+                <input type="email" id="forgot-email" placeholder="Email của bạn *" style="width: 100%; padding: 12px; margin-bottom: 25px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em;">
+                <div style="display: flex; gap: 10px;">
+                    <button type="button" onclick="hideForgotView()" style="flex: 1; padding: 14px; background: white; color: #000; border: 1px solid #000; font-weight: bold; cursor: pointer; border-radius: 8px;">QUAY LẠI</button>
+                    <button type="button" onclick="submitForgot()" style="flex: 1; padding: 14px; background: #000; color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 8px;">GỬI LIÊN KẾT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 2000; overflow-y: auto;">
+        <div style="max-width: 1100px; margin: 30px auto; display: flex; gap: 40px; padding: 0 20px;">
+            <div style="flex: 3;">
+                <h2 style="color: #1c7c54; margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
+                    <span onclick="closeCartModal()" style="cursor: pointer; font-size: 1.2em;">&larr;</span> Thanh toán
+                </h2>
+                <h3 style="margin-bottom: 15px;">Thông tin giao hàng</h3>
+                <input type="text" id="checkout-name" placeholder="Họ và tên" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em;">
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <input type="email" id="checkout-email" placeholder="Email" style="width: 60%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em;">
+                    <input type="tel" id="checkout-phone" placeholder="Số điện thoại" style="width: 40%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em;">
+                </div>
+                <input type="text" id="checkout-address" placeholder="Địa chỉ, tên đường, phường/xã, quận/huyện, tỉnh/TP" style="width: 100%; padding: 12px; margin-bottom: 25px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em;">
+
+                <h3 style="margin-bottom: 15px;">Phương thức thanh toán</h3>
+                <div style="border: 1px solid #1c7c54; padding: 15px; border-radius: 8px; background: #f4fcf7; font-weight: bold; color: #1c7c54; margin-bottom: 30px;">
+                    <label style="display: block; margin-bottom: 12px; cursor: pointer;">
+                        <input type="radio" name="payment_method" value="cod" checked style="margin-right: 10px;"> Thanh toán khi nhận hàng (COD)
+                    </label>
+                    <label style="display: block; margin-bottom: 12px; cursor: pointer;">
+                        <input type="radio" name="payment_method" value="vnpay" style="margin-right: 10px;"> Thanh toán qua VNPay
+                    </label>
+                    <label style="display: block; cursor: pointer;">
+                        <input type="radio" name="payment_method" value="momo" style="margin-right: 10px;"> Thanh toán qua Ví MoMo
+                    </label>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="#" onclick="closeCartModal()" style="color: #1c7c54; text-decoration: none; font-weight: bold;">Giỏ hàng</a>
+                    <button onclick="processCheckout()" style="padding: 15px 30px; background: #1c7c54; color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 8px; font-size: 1.1em; transition: 0.3s;">Hoàn tất đơn hàng</button>
+                </div>
+            </div>
+
+            <div style="flex: 2; background: #f9f9f9; padding: 30px; border-radius: 12px; border-left: 1px solid #eee; height: fit-content;">
+                <h3 style="margin-top: 0; margin-bottom: 20px;">Tóm tắt đơn hàng</h3>
+                <div id="cart-items-container" style="margin-bottom: 20px; max-height: 400px; overflow-y: auto;">
+                </div>
+                <div style="border-top: 1px solid #ddd; padding-top: 15px; margin-bottom: 10px; display: flex; justify-content: space-between;">
+                    <span style="color: #555;">Tạm tính</span>
+                    <span id="cart-subtotal" style="font-weight: bold;">0 VNĐ</span>
+                </div>
+                <div style="margin-bottom: 15px; display: flex; justify-content: space-between;">
+                    <span style="color: #555;">Phí vận chuyển</span>
+                    <span style="font-weight: bold;">Miễn phí</span>
+                </div>
+                <div style="border-top: 1px solid #ddd; padding-top: 15px; display: flex; justify-content: space-between; font-size: 1.3em; font-weight: bold;">
+                    <span>Tổng cộng</span>
+                    <span id="cart-total-price" style="color: #d32f2f;">0 VNĐ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="payment-gateway-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2800; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
+        <div style="background: white; padding: 40px; border-radius: 16px; width: 400px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); position: relative;">
+            <h2 style="color: #1c7c54; margin-top: 0; margin-bottom: 10px;">Cổng Thanh Toán</h2>
+            <p style="color: #555; margin-bottom: 20px;">Vui lòng quét mã QR để thanh toán đơn hàng</p>
+            <img src="https://api.vietqr.io/image/970436-0787994363-2u8z9uD.jpg?amount=0&addInfo=ThanhToanDonHang" alt="QR Code" style="width: 250px; height: 250px; border-radius: 8px; border: 2px solid #eee; margin-bottom: 15px;">
+            <p style="font-size: 1.2em; font-weight: bold; color: #d32f2f; margin-bottom: 25px;">Số tiền: <span id="qr-total">0 VNĐ</span></p>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="cancelPayment()" style="flex: 1; padding: 12px; background: #eee; color: #333; border: none; font-weight: bold; cursor: pointer; border-radius: 8px; transition: 0.3s;">HỦY BỎ</button>
+                <button onclick="confirmPayment()" style="flex: 2; padding: 12px; background: #1c7c54; color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 8px; transition: 0.3s;">ĐÃ THANH TOÁN</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="receipt-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 3000; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
+        <div style="background: white; padding: 40px; border-radius: 16px; width: 450px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); position: relative;">
+            <div style="font-size: 50px; color: #1c7c54; margin-bottom: 10px;">✔️</div>
+            <h2 style="color: #1c7c54; margin-top: 0;">Đặt hàng thành công!</h2>
+            <p style="color: #666; margin-bottom: 20px;">Cảm ơn quý khách đã mua sắm tại Thanh Tâm Ngọc.</p>
+            <div style="background: #f4fcf7; padding: 20px; border-radius: 8px; text-align: left; margin-bottom: 25px; border: 1px dashed #1c7c54;">
+                <p style="margin: 0 0 10px 0;"><strong>Khách hàng:</strong> <span id="receipt-name"></span></p>
+                <p style="margin: 0 0 10px 0;"><strong>Số điện thoại:</strong> <span id="receipt-phone"></span></p>
+                <p style="margin: 0 0 10px 0;"><strong>Giao đến:</strong> <span id="receipt-address"></span></p>
+                <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;">
+                <p style="margin: 0; font-size: 1.2em;"><strong>Tổng thanh toán:</strong> <span id="receipt-total" style="color: #d32f2f; font-weight: bold; float: right;"></span></p>
+            </div>
+            <button onclick="closeReceiptModal()" style="width: 100%; padding: 14px; background: #1c7c54; color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 8px; font-size: 1.1em; transition: 0.3s;">TIẾP TỤC MUA SẮM</button>
+        </div>
+    </div>
+
+    <script>
+        let allProducts = [];
+        let filteredProducts = [];
+        let cartItems = [];
+        let currentPage = 1;
+        let currentCategory = 'all';
+        const pageSize = 12;
+        let pendingOrderData = null;
+
+        function closeModal() { document.getElementById('auth-modal').style.display = 'none'; hideForgotView(); }
+
+        function switchTab(tab) {
+            document.getElementById('form-signin').style.display = tab === 'signin' ? 'block' : 'none';
+            document.getElementById('form-signup').style.display = tab === 'signup' ? 'block' : 'none';
+            document.getElementById('tab-signin').style.color = tab === 'signin' ? '#1c7c54' : '#999';
+            document.getElementById('tab-signin').style.borderBottom = tab === 'signin' ? '3px solid #1c7c54' : 'none';
+            document.getElementById('tab-signup').style.color = tab === 'signup' ? '#1c7c54' : '#999';
+            document.getElementById('tab-signup').style.borderBottom = tab === 'signup' ? '3px solid #1c7c54' : 'none';
+        }
+
+        function showForgotView() {
+            document.getElementById('modal-tabs').style.display = 'none';
+            document.getElementById('form-signin').style.display = 'none';
+            document.getElementById('form-signup').style.display = 'none';
+            document.getElementById('form-forgot').style.display = 'block';
+        }
+
+        function hideForgotView() {
+            document.getElementById('modal-tabs').style.display = 'flex';
+            document.getElementById('form-forgot').style.display = 'none';
+            switchTab('signin');
+        }
+
+        function submitLogin() {
+            const emailVal = document.getElementById('login-email').value;
+            const passVal = document.getElementById('login-pass').value;
+            if (!emailVal || !passVal) { alert("Vui lòng nhập đầy đủ thông tin!"); return; }
+            fetch('/api/account/login', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ Email: emailVal, Password: passVal })
+            }).then(async response => {
+                const data = await response.json();
+                if (response.ok) {
+                    alert("Chào mừng " + data.user + "! Đăng nhập thành công.");
+                    localStorage.setItem('userEmail', emailVal);
+                    localStorage.setItem('userName', data.user);
+                    let authBox = document.querySelector('.auth-box');
+                    authBox.removeAttribute('onclick');
+                    authBox.innerHTML = `<a href="profile.html?email=${emailVal}" style="text-decoration:none; color:#1c7c54; font-weight:bold; display:flex; align-items:center; gap:8px;">Chào, ${data.user}</a>`;
+                    closeModal();
+                } else {
+                    alert("Lỗi: " + (data.message || "Email hoặc mật khẩu không đúng!"));
+                }
+            }).catch(() => alert("Không thể kết nối đến máy chủ."));
+        }
+
+        function submitRegister() {
+            const payload = {
+                FullName: document.getElementById('reg-name').value, Email: document.getElementById('reg-email').value,
+                Password: document.getElementById('reg-pass').value, Birthday: document.getElementById('reg-dob').value || null,
+                AnniversaryDate: document.getElementById('reg-anni').value || null
+            };
+            fetch('/api/account/register', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+            }).then(async response => {
+                if (response.ok) { alert('Đăng ký thành công!'); closeModal(); }
+                else { const text = await response.text(); alert('Lỗi: ' + text); }
+            });
+        }
+
+        function submitForgot() {
+            const email = document.getElementById('forgot-email').value;
+            if (!email) { alert("Vui lòng nhập Email!"); return; }
+            fetch('/api/account/forgotpassword', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ Email: email })
+            }).then(async response => {
+                const text = await response.text();
+                if (response.ok) { alert(text); hideForgotView(); }
+                else { alert(text); }
+            });
+        }
+
+        function openProductDetailModal(name) {
+            const p = allProducts.find(x => x.name === name);
+            if (!p) return;
+
+            document.getElementById('detail-image').src = '/images/' + p.imageUrl;
+            document.getElementById('detail-name').innerText = p.name;
+            document.getElementById('detail-price').innerText = new Intl.NumberFormat('vi-VN').format(p.price) + ' VNĐ';
+
+            const stock = p.stockQuantity !== undefined ? p.stockQuantity : 10;
+            const stockElement = document.getElementById('detail-stock');
+            if (stock > 0) {
+                stockElement.innerText = `Còn hàng (${stock} sản phẩm)`;
+                stockElement.style.color = '#2e7d32';
+            } else {
+                stockElement.innerText = 'Đã hết hàng';
+                stockElement.style.color = '#d32f2f';
+            }
+
+            document.getElementById('detail-gemtype').innerText = p.gemType || 'Ngọc thiên nhiên cao cấp';
+            document.getElementById('detail-description').innerText = p.description || 'Chưa có mô tả chi tiết cho sản phẩm này.';
+
+            const safeName = p.name.replace(/'/g, "\\'");
+            document.getElementById('detail-add-cart-btn').setAttribute('onclick', `addToCart('${safeName}', ${p.price}, '${p.imageUrl}'); closeProductDetailModal();`);
+
+            document.getElementById('product-detail-modal').style.display = 'flex';
+        }
+
+        function closeProductDetailModal() {
+            document.getElementById('product-detail-modal').style.display = 'none';
+        }
+
+        function addToCart(name, price, image) {
+            let item = cartItems.find(i => i.name === name);
+            if (item) {
+                item.quantity++;
+            } else {
+                cartItems.push({ name: name, price: price, image: image, quantity: 1 });
+            }
+            updateCartBadge();
+            const toast = document.getElementById("toast");
+            toast.innerText = "Đã thêm " + name + " vào giỏ hàng.";
+            toast.className = "show";
+            setTimeout(() => toast.className = toast.className.replace("show", ""), 3000);
+        }
+
+        function updateQuantity(index, change) {
+            cartItems[index].quantity += change;
+            if (cartItems[index].quantity <= 0) {
+                cartItems.splice(index, 1);
+            }
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        function updateCartBadge() {
+            const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalQuantity;
+        }
+
+        function openCartModal() {
+            document.getElementById('cart-modal').style.display = 'block';
+
+            const savedEmail = localStorage.getItem('userEmail');
+            const savedName = localStorage.getItem('userName');
+
+            if (savedEmail) {
+                document.getElementById('checkout-email').value = savedEmail;
+            }
+            if (savedName) {
+                document.getElementById('checkout-name').value = savedName;
+            }
+
+            renderCartItems();
+        }
+
+        function closeCartModal() {
+            document.getElementById('cart-modal').style.display = 'none';
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receipt-modal').style.display = 'none';
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cart-items-container');
+            if (cartItems.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #888; margin: 30px 0; font-size: 1.1em;">Giỏ hàng đang trống.</p>';
+                document.getElementById('cart-subtotal').innerText = '0 VNĐ';
+                document.getElementById('cart-total-price').innerText = '0 VNĐ';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cartItems.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                const priceFormatted = new Intl.NumberFormat('vi-VN').format(item.price);
+                html += `
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div style="position: relative;">
+                                    <img src="/images/${item.image}" style="width: 65px; height: 65px; object-fit: cover; border-radius: 8px; border: 1px solid #eee;" onerror="this.onerror=null; this.src='https://dummyimage.com/65x65/e0e0e0/1c7c54.png&text=No+Image';">
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <div style="font-weight: bold; color: #333; font-size: 0.9em;">${item.name}</div>
+                                    <div style="font-weight: bold; color: #d32f2f;">${priceFormatted}₫</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; background: #fff;">
+                                    <button onclick="updateQuantity(${index}, -1)" style="background: #f8f9fa; border: none; padding: 5px 12px; cursor: pointer; font-weight: bold; color: #555; border-right: 1px solid #ddd; font-size: 1.1em;">-</button>
+                                    <span style="width: 40px; text-align: center; font-weight: bold; font-size: 0.95em;">${item.quantity}</span>
+                                    <button onclick="updateQuantity(${index}, 1)" style="background: #f8f9fa; border: none; padding: 5px 12px; cursor: pointer; font-weight: bold; color: #555; border-left: 1px solid #ddd; font-size: 1.1em;">+</button>
+                                </div>
+                                <button onclick="removeFromCart(${index})" style="background: none; border: none; color: #999; cursor: pointer; font-size: 1.5em; transition: 0.3s;" onmouseover="this.style.color='#d32f2f'" onmouseout="this.style.color='#999'">&times;</button>
+                            </div>
+                        </div>
+                    `;
+            });
+            container.innerHTML = html;
+
+            const totalStr = new Intl.NumberFormat('vi-VN').format(total) + ' VNĐ';
+            document.getElementById('cart-subtotal').innerText = totalStr;
+            document.getElementById('cart-total-price').innerText = totalStr;
+        }
+
+        function removeFromCart(index) {
+            cartItems.splice(index, 1);
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        function processCheckout() {
+            if (cartItems.length === 0) {
+                alert("Giỏ hàng đang trống!");
+                return;
+            }
+
+            const name = document.getElementById('checkout-name').value;
+            const phone = document.getElementById('checkout-phone').value;
+            const address = document.getElementById('checkout-address').value;
+            const email = document.getElementById('checkout-email').value;
+
+            if (!name.trim() || !phone.trim() || !address.trim() || !email.trim()) {
+                alert("Vui lòng nhập đầy đủ thông tin giao hàng!");
+                return;
+            }
+
+            const savedEmail = localStorage.getItem('userEmail');
+            if (!savedEmail) {
+                alert("Vui lòng đăng nhập trước khi đặt hàng!");
+                closeCartModal();
+                document.getElementById('auth-modal').style.display = 'flex';
+                return;
+            }
+
+            const fullAddress = name + " - " + phone + " - " + address;
+            const totalAmount = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            pendingOrderData = {
+                Email: email,
+                Address: fullAddress,
+                TotalAmount: totalAmount,
+                Items: cartItems.map(item => ({
+                    Name: item.name,
+                    Price: item.price,
+                    Quantity: item.quantity
+                }))
+            };
+
+            const paymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
+
+            if (paymentMethod === 'cod') {
+                submitOrderToServer();
+            } else {
+                document.getElementById('cart-modal').style.display = 'none';
+                document.getElementById('qr-total').innerText = new Intl.NumberFormat('vi-VN').format(totalAmount) + ' VNĐ';
+                document.getElementById('payment-gateway-modal').style.display = 'flex';
+            }
+        }
+
+        function cancelPayment() {
+            document.getElementById('payment-gateway-modal').style.display = 'none';
+            document.getElementById('cart-modal').style.display = 'block';
+        }
+
+        function confirmPayment() {
+            document.getElementById('payment-gateway-modal').style.display = 'none';
+            submitOrderToServer();
+        }
+
+        function submitOrderToServer() {
+            fetch('/api/orders/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(pendingOrderData)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.message && data.message.includes("Lỗi")) {
+                        alert(data.message);
+                    } else {
+                        const parts = pendingOrderData.Address.split(" - ");
+                        document.getElementById('receipt-name').innerText = parts[0];
+                        document.getElementById('receipt-phone').innerText = parts[1];
+                        document.getElementById('receipt-address').innerText = parts[2];
+                        document.getElementById('receipt-total').innerText = new Intl.NumberFormat('vi-VN').format(pendingOrderData.TotalAmount) + ' VNĐ';
+
+                        document.getElementById('receipt-modal').style.display = 'flex';
+
+                        cartItems = [];
+                        updateCartBadge();
+                        if (document.getElementById('cart-modal').style.display !== 'none') {
+                            closeCartModal();
+                        }
+                        document.getElementById('checkout-name').value = '';
+                        document.getElementById('checkout-phone').value = '';
+                        document.getElementById('checkout-address').value = '';
+                    }
+                })
+                .catch(err => alert("Không thể kết nối đến máy chủ!"));
+        }
+
+        function loadProducts() {
+            fetch('/api/products')
+                .then(res => res.json())
+                .then(data => {
+                    allProducts = data;
+                    filteredProducts = data;
+                    renderProducts();
+                })
+                .catch(err => console.error(err));
+        }
+
+        function renderProducts() {
+            const container = document.getElementById('product-list');
+            container.innerHTML = '';
+
+            if (filteredProducts.length === 0) {
+                container.innerHTML = '<h3 style="grid-column: 1/-1; text-align: center; color: #888;">Không tìm thấy trang sức nào!</h3>';
+                document.getElementById('pagination-container').innerHTML = '';
+                return;
+            }
+
+            const startIndex = (currentPage - 1) * pageSize;
+            const endIndex = startIndex + pageSize;
+            const pageData = filteredProducts.slice(startIndex, endIndex);
+
+            pageData.forEach(p => {
+                const priceFormatted = new Intl.NumberFormat('vi-VN').format(p.price) + " VNĐ";
+                const safeName = p.name.replace(/'/g, "\\'");
+
+                const html = `
+                                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; padding-bottom: 20px; transition: transform 0.3s;">
+                                    <img src="/images/${p.imageUrl}" alt="${p.name}" style="width: 100%; height: 250px; object-fit: cover; cursor: pointer;" loading="lazy" onclick="openProductDetailModal('${safeName}')" onerror="this.onerror=null; this.src='https://dummyimage.com/250x250/e0e0e0/1c7c54.png&text=No+Image';">
+                                    <h4 style="color: #1c7c54; margin: 15px 0 5px; font-size: 1.1em; cursor: pointer;" onclick="openProductDetailModal('${safeName}')">${p.name}</h4>
+                                    <p style="color: #d32f2f; font-weight: bold; font-size: 1.2em; margin-bottom: 15px;">${priceFormatted}</p>
+                                    <button style="background: #f0a500; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 80%; transition: 0.3s;" onclick="addToCart('${safeName}', ${p.price}, '${p.imageUrl}')">Thêm vào giỏ hàng</button>
+                                </div>
+                            `;
+                container.innerHTML += html;
+            });
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const container = document.getElementById('pagination-container');
+            const totalPages = Math.ceil(filteredProducts.length / pageSize);
+
+            if (totalPages <= 1) {
+                container.innerHTML = '';
+                return;
+            }
+
+            container.innerHTML = `
+                            <button class="pagination-btn" onclick="changePage(-1)" ${currentPage === 1 ? 'disabled' : ''}>&laquo; Trang trước</button>
+                            <span style="font-weight: bold; font-size: 1.2em; color: #1c7c54; margin: 0 20px;">Trang ${currentPage} / ${totalPages}</span>
+                            <button class="pagination-btn" onclick="changePage(1)" ${currentPage === totalPages ? 'disabled' : ''}>Trang sau &raquo;</button>
+                        `;
+        }
+
+        function changePage(dir) {
+            currentPage += dir;
+            renderProducts();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function filterCategory(keyword, btn) {
+            document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCategory = keyword;
+            applyFilters();
+        }
+
+        function removeVietnameseTones(str) { return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D'); }
+
+        function applyFilters() {
+            const searchInput = document.getElementById('search-input');
+            const keyword = searchInput ? removeVietnameseTones(searchInput.value.toLowerCase()) : '';
+            const priceFilter = document.getElementById('price-filter').value;
+
+            filteredProducts = allProducts.filter(p => {
+                const matchName = removeVietnameseTones(p.name.toLowerCase()).includes(keyword);
+
+                const matchCategory = currentCategory === 'all' || p.name.toLowerCase().includes(currentCategory);
+
+                let matchPrice = true;
+                if (priceFilter === 'under5') matchPrice = p.price < 5000000;
+                else if (priceFilter === '5to10') matchPrice = p.price >= 5000000 && p.price <= 10000000;
+                else if (priceFilter === 'over10') matchPrice = p.price > 10000000;
+
+                return matchName && matchCategory && matchPrice;
+            });
+
+            currentPage = 1;
+            renderProducts();
+        }
+
+        window.onload = function () {
+            loadProducts();
+
+            const savedEmail = localStorage.getItem('userEmail');
+            const savedName = localStorage.getItem('userName');
+
+            if (savedEmail && savedName) {
+                let authBox = document.querySelector('.auth-box');
+                authBox.removeAttribute('onclick');
+                authBox.innerHTML = `
+                            <a href="profile.html?email=${savedEmail}" style="text-decoration:none; color:#1c7c54; font-weight:bold; display:flex; align-items:center; gap:8px;">
+                                Chào, ${savedName}
+                            </a>
+                        `;
+            }
+        };
+    </script>
+</body>
+</html>

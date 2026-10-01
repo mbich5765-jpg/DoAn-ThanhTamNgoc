@@ -1,0 +1,490 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\migrations\\20260507140713_seed900products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:migrations\\20260507140713_seed900products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\migrations\\20260508150659_addcartsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:migrations\\20260508150659_addcartsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\migrations\\20260507122747_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:migrations\\20260507122747_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\thanhtamngoc.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:thanhtamngoc.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\sqlquery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:sqlquery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\thanhtamngoc.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:thanhtamngoc.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\upgradelog.htm||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:upgradelog.htm||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\wwwroot\\profile.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:wwwroot\\profile.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\wwwroot\\product-detail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:wwwroot\\product-detail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|d:\\doan_thanhtamngoc\\source\\code\\wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{390E7695-4DE5-59C7-9165-1D35B73D4072}|ThanhTamNgoc.Api.csproj|solutionrelative:wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAYwAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T15:26:19.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoriesController.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAABcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:29:19.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CartController.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\CartController.cs",
+              "RelativeToolTip": "Controllers\\CartController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:29:12.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T14:08:44.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAIwAUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T03:52:43.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260507140713_Seed900Products.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Migrations\\20260507140713_Seed900Products.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260507140713_Seed900Products.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Migrations\\20260507140713_Seed900Products.cs",
+              "RelativeToolTip": "Migrations\\20260507140713_Seed900Products.cs",
+              "ViewState": "AgIAAH8DAAAAAAAAAAAQwFgVAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:38:16.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAADwBAAAAAAAAAAAwwAQAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:28:43.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAC0AAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:42:13.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:32:15.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwAAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:39:17.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20260508150659_AddCartSystem.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Migrations\\20260508150659_AddCartSystem.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260508150659_AddCartSystem.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Migrations\\20260508150659_AddCartSystem.cs",
+              "RelativeToolTip": "Migrations\\20260508150659_AddCartSystem.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAQwFUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:39:06.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20260507122747_InitialCreate.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Migrations\\20260507122747_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260507122747_InitialCreate.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Migrations\\20260507122747_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20260507122747_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:37:31.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "Models\\Cart.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Models\\Cart.cs",
+              "RelativeToolTip": "Models\\Cart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:41:06.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "Models\\CartItem.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Models\\CartItem.cs",
+              "RelativeToolTip": "Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:41:19.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T06:40:29.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA3wAIAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:41:36.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T15:41:28.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T07:37:10.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-12T15:41:54.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ThanhTamNgoc.Api.http",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\ThanhTamNgoc.Api.http",
+              "RelativeDocumentMoniker": "ThanhTamNgoc.Api.http",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\ThanhTamNgoc.Api.http",
+              "RelativeToolTip": "ThanhTamNgoc.Api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-06-18T04:27:19.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SQLQuery1.sql",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\SQLQuery1.sql",
+              "RelativeDocumentMoniker": "SQLQuery1.sql",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\SQLQuery1.sql",
+              "RelativeToolTip": "SQLQuery1.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-06-18T04:27:14.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-18T09:14:01.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ThanhTamNgoc.Api",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\ThanhTamNgoc.Api.csproj",
+              "RelativeDocumentMoniker": "ThanhTamNgoc.Api.csproj",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\ThanhTamNgoc.Api.csproj",
+              "RelativeToolTip": "ThanhTamNgoc.Api.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-18T09:09:17.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UpgradeLog.htm",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\UpgradeLog.htm",
+              "RelativeDocumentMoniker": "UpgradeLog.htm",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\UpgradeLog.htm",
+              "RelativeToolTip": "UpgradeLog.htm",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAAABwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-06-18T04:27:26.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "index.html",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "wwwroot\\index.html",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\wwwroot\\index.html",
+              "RelativeToolTip": "wwwroot\\index.html",
+              "ViewState": "AgIAAKwBAAAAAAAAAAAIwLYBAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-05-31T15:25:59.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-12T15:42:08.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "profile.html",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\wwwroot\\profile.html",
+              "RelativeDocumentMoniker": "wwwroot\\profile.html",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\wwwroot\\profile.html",
+              "RelativeToolTip": "wwwroot\\profile.html",
+              "ViewState": "AgIAAA4BAAAAAAAAAAAuwDUBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-05-31T15:26:14.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "product-detail.html",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\wwwroot\\product-detail.html",
+              "RelativeDocumentMoniker": "wwwroot\\product-detail.html",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\wwwroot\\product-detail.html",
+              "RelativeToolTip": "wwwroot\\product-detail.html",
+              "ViewState": "AgIAACMAAAAAAAAAAAAuwEoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-05-31T15:26:12.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "admin.html",
+              "DocumentMoniker": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\wwwroot\\admin.html",
+              "RelativeDocumentMoniker": "wwwroot\\admin.html",
+              "ToolTip": "D:\\DoAn_ThanhTamNgoc\\Source\\Code\\wwwroot\\admin.html",
+              "RelativeToolTip": "wwwroot\\admin.html",
+              "ViewState": "AgIAAFcCAAAAAAAAAAAuwH4CAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-06-01T13:00:17.978Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
